@@ -1,3 +1,4 @@
+package dsicPlayer;
 import java.util.Arrays;
 
 /**
@@ -106,6 +107,16 @@ public class CompactDisc {
 
 		return b;
 
+	}
+
+	@Override
+	public int hashCode() {
+		int hash = 1;
+		final int hashMultiplier = 59;
+		hash = hashMultiplier * hash + ((title == null) ? 0 : title.hashCode());
+		hash = hashMultiplier * hash + ((title == null) ? 0 : artist.hashCode());
+		hash = hashMultiplier * hash + Arrays.hashCode(songs);
+		return hash;
 	}
 
 	public int getNumberOfSongs() {

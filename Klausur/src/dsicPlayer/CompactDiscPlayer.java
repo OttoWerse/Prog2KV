@@ -1,3 +1,4 @@
+package dsicPlayer;
 import exceptions.discEmptyException;
 import exceptions.noDiscException;
 import exceptions.nothingPlayingException;
