@@ -48,8 +48,8 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 	 * @param einInt
 	 * @param einBoolean
 	 */
-	public eineKlasse(List<String> eineListe, EigenerDatentyp einObjekt, int[] einArray, String einString, char einChar,
-			float einFloat, double einDouble, int einInt, boolean einBoolean) {
+	public eineKlasse(List<String> eineListe, EigeneEnum eineAufzählung, EigenerDatentyp einObjekt, int[] einArray,
+			String einString, char einChar, float einFloat, double einDouble, int einInt, boolean einBoolean) {
 		super();
 		this.setEineListe(eineListe);
 		this.setEinObjekt(einObjekt);
@@ -73,6 +73,13 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 	 */
 	public List<String> getEineListe() {
 		return eineListe;
+	}
+
+	/**
+	 * @return the eineAufzählung
+	 */
+	public EigeneEnum getEineAufzählung() {
+		return eineAufzählung;
 	}
 
 	/**
@@ -135,8 +142,16 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 	 * @param eineListe the eineListe to set
 	 */
 	public void setEineListe(List<String> eineListe) {
-		Objects.requireNonNull(eineListe, "eineListe must not be null!");
+		// TODO error handling
 		this.eineListe = eineListe;
+	}
+
+	/**
+	 * @param eineAufzählung the eineAufzählung to set
+	 */
+	public void setEineAufzählung(EigeneEnum eineAufzählung) {
+		// TODO error handling
+		this.eineAufzählung = eineAufzählung;
 	}
 
 	/**
@@ -199,7 +214,7 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 	 * @param einBoolean the einBoolean to set
 	 */
 	public void setEinBoolean(boolean einBoolean) {
-		Objects.requireNonNull(einBoolean, "eineListe must not be null!");
+		Objects.requireNonNull(einBoolean, "einBoolean must not be null!");
 		this.einBoolean = einBoolean;
 	}
 
@@ -290,8 +305,8 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 
 	@Override
 	public eineKlasse clone() {
-		return new eineKlasse(this.eineListe, this.einObjekt, this.einArray, this.einString, this.einChar,
-				this.einFloat, this.einDouble, this.einInt, this.einBoolean);
+		return new eineKlasse(this.eineListe, this.eineAufzählung, this.einObjekt, this.einArray, this.einString,
+				this.einChar, this.einFloat, this.einDouble, this.einInt, this.einBoolean);
 	}
 
 	/*
@@ -333,10 +348,13 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 	 */
 	@Override
 	public int eineGanzAndereMethode() throws eineUncheckedException {
-		if (einBoolean) {
+		// State der Enum überprüfen
+		if (this.eineAufzählung.equals(EigeneEnum.EINS_ZUSTAND)) {
 			// Neue Exception yeeten
 			throw new eineUncheckedException();
 		} else {
+			// State der Enum setzen
+			this.setEineAufzählung(EigeneEnum.ZWEI_ZUSTAND);
 			return einInt;
 		}
 	}
