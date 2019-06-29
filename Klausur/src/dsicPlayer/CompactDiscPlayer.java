@@ -1,8 +1,8 @@
 package dsicPlayer;
-import exceptions.discEmptyException;
-import exceptions.noDiscException;
-import exceptions.nothingPlayingException;
-import exceptions.stillLoadingException;
+import exceptions.DiscEmptyException;
+import exceptions.NoDiscException;
+import exceptions.NothingPlayingException;
+import exceptions.StillLoadingException;
 
 /**
  * 
@@ -72,34 +72,34 @@ public class CompactDiscPlayer {
 		this.currentState = currentState;
 	}
 
-	public void insertDisc(CompactDisc cd) throws discEmptyException {
+	public void insertDisc(CompactDisc cd) throws DiscEmptyException {
 		if (cd.getNumberOfSongs() != 0) {
 			this.setCurrentDisc(cd);
 			this.setCurrentState(PlayerState.LOADING);
 		} else {
-			throw new discEmptyException("Disc is emtpy!");
+			throw new DiscEmptyException("Disc is emtpy!");
 		}
 	}
 
-	public void play() throws noDiscException, stillLoadingException {
+	public void play() throws NoDiscException, StillLoadingException {
 		if (this.currentState.equals(PlayerState.READY)) {
 			this.setCurrentState(PlayerState.PLAYING);
 		} else if (this.currentState.equals(PlayerState.NODISC)) {
-			throw new noDiscException("No Disc!");
+			throw new NoDiscException("No Disc!");
 		} else if (this.currentState.equals(PlayerState.LOADING)) {
-			throw new stillLoadingException("Please wait!");
+			throw new StillLoadingException("Please wait!");
 		}
 	}
 
-	public void skip() throws noDiscException, nothingPlayingException, stillLoadingException {
+	public void skip() throws NoDiscException, NothingPlayingException, StillLoadingException {
 		if (this.currentState.equals(PlayerState.PLAYING)) {
 			this.currentPosition++;
 		} else if (this.currentState.equals(PlayerState.READY)) {
-			throw new nothingPlayingException("No music is playing!");
+			throw new NothingPlayingException("No music is playing!");
 		} else if (this.currentState.equals(PlayerState.NODISC)) {
-			throw new noDiscException("No Disc!");
+			throw new NoDiscException("No Disc!");
 		} else if (this.currentState.equals(PlayerState.LOADING)) {
-			throw new stillLoadingException("Please wait!");
+			throw new StillLoadingException("Please wait!");
 		}
 	}
 

@@ -7,7 +7,7 @@ package exceptions;
  * @author Otto Werse
  *
  */
-public class discEmptyException extends Exception {
+public class DiscEmptyException extends Exception {
 	// start of attributes
 
 	// end of attributes
@@ -17,7 +17,7 @@ public class discEmptyException extends Exception {
 	/**
 	 * 
 	 */
-	public discEmptyException() {
+	public DiscEmptyException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -25,7 +25,7 @@ public class discEmptyException extends Exception {
 	/**
 	 * @param message
 	 */
-	public discEmptyException(String message) {
+	public DiscEmptyException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}

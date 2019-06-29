@@ -7,7 +7,7 @@ package eierlegendeWollmilchSau;
  * @author Otto Werse
  *
  */
-public interface einInterface {
+public interface EinInterface {
 
 	public static final int eineKonstante = 12;
 	int eineWeitereKonstante = 12;
@@ -16,9 +16,9 @@ public interface einInterface {
 	public void eineMethode();
 
 	// Diese Methode yeeted eine checked Exception
-	public int eineWeitereMethode() throws eineException;
+	public int eineWeitereMethode() throws EineException;
 
 	// Diese Methode yeeted eine Unchecked Exception
-	public int eineGanzAndereMethode() throws eineUncheckedException;
+	public int eineGanzAndereMethode() throws EineUncheckedException;
 
 }

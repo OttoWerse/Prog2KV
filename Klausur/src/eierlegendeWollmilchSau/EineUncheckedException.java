@@ -7,7 +7,7 @@ package eierlegendeWollmilchSau;
  * @author Otto Werse
  *
  */
-public class eineException extends Exception {
+public class EineUncheckedException extends Error {
 	// start of attributes
 
 	// end of attributes

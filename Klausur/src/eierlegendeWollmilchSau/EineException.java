@@ -7,7 +7,7 @@ package eierlegendeWollmilchSau;
  * @author Otto Werse
  *
  */
-public class genauEineSuperklasse {
+public class EineException extends Exception {
 	// start of attributes
 
 	// end of attributes

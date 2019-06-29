@@ -1,13 +1,13 @@
-package exceptions;
 /**
  * 
  */
+package exceptions;
 
 /**
  * @author Otto Werse
  *
  */
-public class noDiscException extends Exception {
+public class NothingPlayingException extends Exception {
 	// start of attributes
 
 	// end of attributes
@@ -17,7 +17,7 @@ public class noDiscException extends Exception {
 	/**
 	 * 
 	 */
-	public noDiscException() {
+	public NothingPlayingException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -25,7 +25,7 @@ public class noDiscException extends Exception {
 	/**
 	 * @param message
 	 */
-	public noDiscException(String message) {
+	public NothingPlayingException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}

@@ -7,6 +7,6 @@ package eierlegendeWollmilchSau;
  * @author Otto Werse
  *
  */
-public interface einWeiteresInterface {
+public interface EinWeiteresInterface {
 
 }

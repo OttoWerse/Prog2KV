@@ -13,7 +13,7 @@ import java.util.Objects;
  * @author Otto Werse
  *
  */
-public class eineKlasse extends genauEineSuperklasse implements einInterface, einWeiteresInterface {
+public class EineKlasse extends GenauEineSuperklasse implements EinInterface, EinWeiteresInterface {
 	// start of attributes
 	private List<String> eineListe = new ArrayList<String>(); // Polymorphismus: Eine ArrayList ist auch eine List
 	private EigeneEnum eineAufzählung;
@@ -33,7 +33,7 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 	/**
 	 * 
 	 */
-	public eineKlasse() {
+	public EineKlasse() {
 		super();
 	}
 
@@ -48,7 +48,7 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 	 * @param einInt
 	 * @param einBoolean
 	 */
-	public eineKlasse(List<String> eineListe, EigeneEnum eineAufzählung, EigenerDatentyp einObjekt, int[] einArray,
+	public EineKlasse(List<String> eineListe, EigeneEnum eineAufzählung, EigenerDatentyp einObjekt, int[] einArray,
 			String einString, char einChar, float einFloat, double einDouble, int einInt, boolean einBoolean) {
 		super();
 		this.setEineListe(eineListe);
@@ -247,7 +247,7 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		eineKlasse other = (eineKlasse) obj;
+		EineKlasse other = (EineKlasse) obj;
 		if (!this.eineListe.equals(other.eineListe))
 			return false;
 		if (!this.einObjekt.equals(other.einObjekt))
@@ -304,8 +304,8 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 	}
 
 	@Override
-	public eineKlasse clone() {
-		return new eineKlasse(this.eineListe, this.eineAufzählung, this.einObjekt, this.einArray, this.einString,
+	public EineKlasse clone() {
+		return new EineKlasse(this.eineListe, this.eineAufzählung, this.einObjekt, this.einArray, this.einString,
 				this.einChar, this.einFloat, this.einDouble, this.einInt, this.einBoolean);
 	}
 
@@ -319,7 +319,7 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 		// Checked Exception muss geyoinked werden
 		try {
 			this.eineWeitereMethode();
-		} catch (eineException e) {
+		} catch (EineException e) {
 			// TODO: handle exception
 		}
 		// Unchecked Exception muss nicht gecyoinked werden
@@ -332,10 +332,10 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 	 * @see eierlegendeWollmilchSau.einInterface#eineWeitereMethode()
 	 */
 	@Override
-	public int eineWeitereMethode() throws eineException {
+	public int eineWeitereMethode() throws EineException {
 		if (einBoolean) {
 			// Neue Exception yeeten
-			throw new eineException();
+			throw new EineException();
 		} else {
 			return einInt;
 		}
@@ -347,11 +347,11 @@ public class eineKlasse extends genauEineSuperklasse implements einInterface, ei
 	 * @see eierlegendeWollmilchSau.einInterface#eineGanzAndereMethode()
 	 */
 	@Override
-	public int eineGanzAndereMethode() throws eineUncheckedException {
+	public int eineGanzAndereMethode() throws EineUncheckedException {
 		// State der Enum überprüfen
 		if (this.eineAufzählung.equals(EigeneEnum.EINS_ZUSTAND)) {
 			// Neue Exception yeeten
-			throw new eineUncheckedException();
+			throw new EineUncheckedException();
 		} else {
 			// State der Enum setzen
 			this.setEineAufzählung(EigeneEnum.ZWEI_ZUSTAND);

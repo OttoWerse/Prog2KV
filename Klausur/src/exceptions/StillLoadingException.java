@@ -7,7 +7,8 @@ package exceptions;
  * @author Otto Werse
  *
  */
-public class nothingPlayingException extends Exception {
+public class StillLoadingException extends Exception {
+
 	// start of attributes
 
 	// end of attributes
@@ -17,7 +18,7 @@ public class nothingPlayingException extends Exception {
 	/**
 	 * 
 	 */
-	public nothingPlayingException() {
+	public StillLoadingException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -25,7 +26,7 @@ public class nothingPlayingException extends Exception {
 	/**
 	 * @param message
 	 */
-	public nothingPlayingException(String message) {
+	public StillLoadingException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}

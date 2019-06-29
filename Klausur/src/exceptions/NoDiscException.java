@@ -1,14 +1,13 @@
+package exceptions;
 /**
  * 
  */
-package exceptions;
 
 /**
  * @author Otto Werse
  *
  */
-public class stillLoadingException extends Exception {
-
+public class NoDiscException extends Exception {
 	// start of attributes
 
 	// end of attributes
@@ -18,7 +17,7 @@ public class stillLoadingException extends Exception {
 	/**
 	 * 
 	 */
-	public stillLoadingException() {
+	public NoDiscException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -26,7 +25,7 @@ public class stillLoadingException extends Exception {
 	/**
 	 * @param message
 	 */
-	public stillLoadingException(String message) {
+	public NoDiscException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
